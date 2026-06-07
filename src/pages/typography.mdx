@@ -1,0 +1,144 @@
+---
+layout: ../layouts/Document.astro
+
+headerProps:
+  title: "Typography"
+
+pageMetaProps:
+  title: "Typography - Material Design CSS"
+  description: "@sandlada/material-design-css provides a complete typography tokens. 30 styles, including 15 classic styles and 15 emphasized styles. This document will guide users on how to use typography."
+  keywords: "Material Design CSS, @sandlada/material-design-css, sandlada, kai-orion, tutorials, sample code, typography, typescale"
+---
+
+# Typography
+
+Typography includes 30 styles, including 15 classic styles and 15 emphasized styles. These 15 styles are composed of 5 parts.:
+
+- Display
+- Headline
+- Title
+- Body
+- Label
+
+Each part has three sizes:
+
+- Large
+- Medium
+- Small
+
+Each of the 30 styles has a single token that captures all the default properties. Tokens are separated into the baseline and emphasized sets. Each axis and property, such as font, line height, size, tracking, and weight, also has an individual token for greater customization. 
+
+For a detailed description of M3 Typography, see [Definition of M3 Typography](https://m3.material.io/styles/typography/type-scale-tokens).
+
+## Import
+
+### For CSS
+
+_For CSS, we don't provide more detailed class names like tailindcss._
+
+```css
+@import "@sandlada/material-design-css/typography/typography-utilities.css";
+```
+
+### For TailwindCSS v4
+
+_For CSS, we don't provide more detailed class names like tailindcss._
+
+```css
+@import "@sandlada/material-design-css/typography/tailwind-theme.css";
+@import "@sandlada/material-design-css/typography/tailwind-utilities.css";
+```
+
+## Usage
+
+### Classic Style
+
+<section class="card">
+    <span class="block display-large">display-large</span>
+    <span class="block display-medium">display-medium</span>
+    <span class="block display-small">display-small</span>
+    <span class="block headline-large">headline-large</span>
+    <span class="block headline-medium">headline-medium</span>
+    <span class="block headline-small">headline-small</span>
+    <span class="block title-large">title-large</span>
+    <span class="block title-medium">title-medium</span>
+    <span class="block title-small">title-small</span>
+    <span class="block body-large">body-large</span>
+    <span class="block body-medium">body-medium</span>
+    <span class="block body-small">body-small</span>
+    <span class="block label-large">label-large</span>
+    <span class="block label-medium">label-medium</span>
+    <span class="block label-small">label-small</span>
+</section>
+
+```html
+<section>
+    <span class="block display-large">display-large</span>
+    <span class="block display-medium">display-medium</span>
+    <span class="block display-small">display-small</span>
+    <span class="block headline-large">headline-large</span>
+    <span class="block headline-medium">headline-medium</span>
+    <span class="block headline-small">headline-small</span>
+    <span class="block title-large">title-large</span>
+    <span class="block title-medium">title-medium</span>
+    <span class="block title-small">title-small</span>
+    <span class="block body-large">body-large</span>
+    <span class="block body-medium">body-medium</span>
+    <span class="block body-small">body-small</span>
+    <span class="block label-large">label-large</span>
+    <span class="block label-medium">label-medium</span>
+    <span class="block label-small">label-small</span>
+</section>
+
+<style>
+    .block {
+        dispay: block;
+    }
+</style>
+```
+
+### Emphasized Style
+
+<section class="card">
+    <span class="block emphasized-display-large">display-large</span>
+    <span class="block emphasized-display-medium">display-medium</span>
+    <span class="block emphasized-display-small">display-small</span>
+    <span class="block emphasized-headline-large">headline-large</span>
+    <span class="block emphasized-headline-medium">headline-medium</span>
+    <span class="block emphasized-headline-small">headline-small</span>
+    <span class="block emphasized-title-large">title-large</span>
+    <span class="block emphasized-title-medium">title-medium</span>
+    <span class="block emphasized-title-small">title-small</span>
+    <span class="block emphasized-body-large">body-large</span>
+    <span class="block emphasized-body-medium">body-medium</span>
+    <span class="block emphasized-body-small">body-small</span>
+    <span class="block emphasized-label-large">label-large</span>
+    <span class="block emphasized-label-medium">label-medium</span>
+    <span class="block emphasized-label-small">label-small</span>
+</section>
+
+```html
+<section>
+    <span class="block emphasized-display-large">display-large</span>
+    <span class="block emphasized-display-medium">display-medium</span>
+    <span class="block emphasized-display-small">display-small</span>
+    <span class="block emphasized-headline-large">headline-large</span>
+    <span class="block emphasized-headline-medium">headline-medium</span>
+    <span class="block emphasized-headline-small">headline-small</span>
+    <span class="block emphasized-title-large">title-large</span>
+    <span class="block emphasized-title-medium">title-medium</span>
+    <span class="block emphasized-title-small">title-small</span>
+    <span class="block emphasized-body-large">body-large</span>
+    <span class="block emphasized-body-medium">body-medium</span>
+    <span class="block emphasized-body-small">body-small</span>
+    <span class="block emphasized-label-large">label-large</span>
+    <span class="block emphasized-label-medium">label-medium</span>
+    <span class="block emphasized-label-small">label-small</span>
+</section>
+
+<style>
+    .block {
+        dispay: block;
+    }
+</style>
+```

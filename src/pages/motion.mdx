@@ -1,0 +1,186 @@
+---
+layout: ../layouts/Document.astro
+
+headerProps:
+  title: "Motion"
+
+pageMetaProps:
+  title: "Motion - Material Design CSS"
+  description: "The Material Design 3 Motion system includes easing and duration. @sandlada/material-design-css provides Motion tokens to help developers easily use them in transitions."
+  keywords: "Material Design CSS, @sandlada/material-design-css, sandlada, kai-orion, tutorials, sample code, motion"
+---
+
+# Motion
+
+Motion consists of three parts:
+
+- Easing
+  - emphasized
+  - emphasized-decelerate
+  - emphasized-accelerate
+  - standard
+  - standard-decelerate
+  - standard-accelerate
+- Duration
+  - short1
+  - short2
+  - short3
+  - short4
+  - medium1
+  - medium2
+  - medium3
+  - medium4
+  - long1
+  - long2
+  - long3
+  - long4
+  - extra-long1
+  - extra-long2
+  - extra-long3
+  - extra-long4
+- Springs
+  - expressive-fast-spatial
+  - expressive-default-spatial
+  - expressive-slow-spatial
+  - expressive-fast-effects
+  - expressive-default-effects
+  - expressive-slow-effects
+  - standard-fast-spatial
+  - standard-default-spatial
+  - standard-slow-spatial
+  - standard-fast-effects
+  - standard-default-effects
+  - standard-slow-effects
+
+For a detailed description of M3 Motion, see [Definition of M3 Motion](https://m3.material.io/styles/motion/easing-and-duration/tokens-specs).
+
+## Import
+
+```css
+@import "@sandlada/material-design-css/motion/transition.css";
+@import "@sandlada/material-design-css/motion/animation.css";
+```
+
+## Usage
+
+### Duration
+
+<div class="flex flex-col">
+    <div class="slide-box bg-primary animation-duration-short1"></div>
+    <div class="slide-box bg-primary animation-duration-short2"></div>
+    <div class="slide-box bg-primary animation-duration-short3"></div>
+    <div class="slide-box bg-primary animation-duration-short4"></div>
+    <div class="slide-box bg-primary animation-duration-medium1"></div>
+    <div class="slide-box bg-primary animation-duration-medium2"></div>
+    <div class="slide-box bg-primary animation-duration-medium3"></div>
+    <div class="slide-box bg-primary animation-duration-medium4"></div>
+    <div class="slide-box bg-primary animation-duration-long1"></div>
+    <div class="slide-box bg-primary animation-duration-long2"></div>
+    <div class="slide-box bg-primary animation-duration-long3"></div>
+    <div class="slide-box bg-primary animation-duration-long4"></div>
+    <div class="slide-box bg-primary animation-duration-extra-long1"></div>
+    <div class="slide-box bg-primary animation-duration-extra-long2"></div>
+    <div class="slide-box bg-primary animation-duration-extra-long3"></div>
+    <div class="slide-box bg-primary animation-duration-extra-long4"></div>
+</div>
+
+```html
+<div class="flex flex-col">
+    <div class="slide-box bg-primary animation-duration-short1"></div>
+    <div class="slide-box bg-primary animation-duration-short2"></div>
+    <div class="slide-box bg-primary animation-duration-short3"></div>
+    <div class="slide-box bg-primary animation-duration-short4"></div>
+    <div class="slide-box bg-primary animation-duration-medium1"></div>
+    <div class="slide-box bg-primary animation-duration-medium2"></div>
+    <div class="slide-box bg-primary animation-duration-medium3"></div>
+    <div class="slide-box bg-primary animation-duration-medium4"></div>
+    <div class="slide-box bg-primary animation-duration-long1"></div>
+    <div class="slide-box bg-primary animation-duration-long2"></div>
+    <div class="slide-box bg-primary animation-duration-long3"></div>
+    <div class="slide-box bg-primary animation-duration-long4"></div>
+    <div class="slide-box bg-primary animation-duration-extra-long1"></div>
+    <div class="slide-box bg-primary animation-duration-extra-long2"></div>
+    <div class="slide-box bg-primary animation-duration-extra-long3"></div>
+    <div class="slide-box bg-primary animation-duration-extra-long4"></div>
+</div>
+
+<style>
+    .flex {
+        display: flex;
+        overflow: auto;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .slide-box {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        animation-name: slide-box-animation;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes slide-box-animation {
+        from {
+            left: 0;
+        }
+
+        to {
+            left: 100%;
+        }
+    }
+</style>
+```
+
+### Easing
+
+<div class="flex flex-col">
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-emphasized"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-emphasized-decelerate"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-emphasized-accelerate"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-standard"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-standard-decelerate"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-standard-accelerate"></div>
+</div>
+
+```html
+<div class="flex flex-col">
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-emphasized"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-emphasized-decelerate"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-emphasized-accelerate"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-standard"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-standard-decelerate"></div>
+    <div class="slide-box bg-primary animation-duration-long4 animation-easing-standard-accelerate"></div>
+</div>
+
+<style>
+    .flex {
+        display: flex;
+        overflow: auto;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .slide-box {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        animation-name: slide-box-animation;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes slide-box-animation {
+        from {
+            left: 0;
+        }
+
+        to {
+            left: 100%;
+        }
+    }
+</style>
+```

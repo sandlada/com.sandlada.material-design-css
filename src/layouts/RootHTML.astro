@@ -1,0 +1,15 @@
+---
+import "../styles/tailwind.css"
+
+import ColorSchemeScript from 'com.sandlada.shared/modules/theme/ColorSchemeScript.astro'
+---
+
+<html lang="en">
+    <head>
+        <slot name="head" />
+        <ColorSchemeScript></ColorSchemeScript>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>

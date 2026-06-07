@@ -1,0 +1,68 @@
+---
+layout: ../layouts/Document.astro
+
+headerProps:
+  title: "Home"
+
+pageMetaProps:
+  title: "Material Design CSS - A CSS NPM Package for Material Design from Sandlada"
+  description: "@sandlada/material-design-css is a CSS NPM Package for Material Design that improves your life. It includes color, motion, shape and typography design tokens."
+  keywords: "Material Design CSS, @sandlada/material-design-css, sandlada, kai-orion, tutorials, sample code, home page"
+---
+
+# Home
+
+## Introduce
+
+`@sandlada/material-design-css` is a **CSS library for Material Design**. Each style is obtained and written from Material Design 3. Developers can easily use Material Design design tokens such as `text-on-primary`, `bg-surface-container`, `title-medium`, `shape-large`, etc. through this style library.
+
+CSS styles utilities include:
+
+- Color
+- Palette
+- Motion
+- Shape
+- Typography
+
+**TailwindCSS v4 is also supported!**
+
+## Installation
+
+```plaintext
+npm i @sandlada/material-design-css
+```
+
+## Import
+
+If you are using a development environment such as Vite, you can import the css style file through `import` in the JS/TS file:
+
+```typescript
+// TypeScript / JavaScript
+import "@sandlada/material-design-css/preset.css"
+import "@sandlada/material-design-css/prebuild-color/light-green.css"
+import "@sandlada/material-design-css/color/bg-utilities.css"
+import "@sandlada/material-design-css/color/text-utilities.css"
+import "@sandlada/material-design-css/palette/bg-utilities.css"
+import "@sandlada/material-design-css/palette/text-utilities.css"
+import "@sandlada/material-design-css/motion/animation-utilities.css"
+import "@sandlada/material-design-css/motion/transition-utilities.css"
+import "@sandlada/material-design-css/shape/shape-utilities.css"
+import "@sandlada/material-design-css/typography/typography-utilities.css"
+```
+
+If you prefer to use CSS files to import css style files:
+
+```css
+/* Css */
+@import "@sandlada/material-design-css/color/bg-utilities.css";
+/* ... */
+```
+
+## Usage
+
+Now that you have completed the installation and import, go to the following page for more usage tutorials:
+
+- [Color](/color)
+- [Motion](/motion)
+- [Shape](/shape)
+- [Typography](/typography)
