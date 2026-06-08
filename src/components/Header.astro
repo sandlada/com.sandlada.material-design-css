@@ -44,12 +44,14 @@ import "@material/web/ripple/ripple"
     })
 </script>
 
-<script is:inline>
+<script is:inline type="module">
+    import { ContextSymbol } from '@sandlada/document-context';
+
     document.addEventListener('DOMContentLoaded', () => {
         const button = document.querySelector(`#switch-theme-button`)
         const l = button?.querySelector(`.light`)
         const d = button?.querySelector(`.dark`)
-        
+
         if(!button || !l || !d) {
             return
         }
@@ -63,15 +65,16 @@ import "@material/web/ripple/ripple"
                 l.setAttribute('hidden', '')
             }
         }
-        
+
         button.addEventListener('click', () => {
-            document.dispatchEvent(new Event(!document.themeConfig.isDark ? 'ui-change-to-dark-theme' : 'ui-change-to-light-theme'))
-            document.dispatchEvent(new Event('ui-save-changes'))
-            updateButtonUI(document.themeConfig.isDark)
+            document.dispatchEvent(new Event(!document[ContextSymbol].themeConfig.isDark ? 'theme:change-to-dark' : 'theme:change-to-light'))
+            document.dispatchEvent(new Event(document[ContextSymbol].themeConfig.isDark ? 'attr:change-to-dark' : 'attr:change-to-light'))
+            document.dispatchEvent(new Event('theme:save-changes'))
+            updateButtonUI(document[ContextSymbol].themeConfig.isDark)
         })
 
         // Init
-        updateButtonUI(document.themeConfig.isDark)
+        updateButtonUI(document[ContextSymbol].themeConfig.isDark)
     })
 </script>
 

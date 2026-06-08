@@ -5,9 +5,9 @@ headerProps:
   title: "Shape"
 
 pageMetaProps:
-  title: "Shape - Material Design CSS"
-  description: "The Material Design 3 shape system uses a size-based scale with ten styles. @sandlada/material-design-css provides a complete shape tokens."
-  keywords: "Material Design CSS, @sandlada/material-design-css, sandlada, kai-orion, tutorials, sample code, shape"
+  title: "Shape Corner Radius - Material Design CSS"
+  description: "Material Design 3 shape system with @sandlada/material-design-css. Rounded utilities from none to extra-extra-large with directional suffixes (t, r, b, l, tl, tr, bl, br). Supports TailwindCSS v4 theme integration."
+  keywords: "Material Design shape, corner radius, rounded utilities, @sandlada/material-design-css, rounded-medium, rounded-large, shape tokens, CSS border radius, directional corners, TailwindCSS v4"
 ---
 
 # Shape
@@ -44,18 +44,21 @@ For a detailed description of M3 Shape, see [Definition of M3 Shape](https://m3.
 ### For CSS
 
 ```css
-@import "@sandlada/material-design-css/shape-utilities.css";
+@import "@sandlada/material-design-css/shape/shape-utilities.css";
 ```
 
 ### For TailwindCSS v4
 
 ```css
-@import "@sandlada/material-design-css/tailwind-theme.css";
+@import "tailwindcss";
+@import "@sandlada/material-design-css/shape/tailwind-theme.css";
 ```
 
 ## Usage
 
-<div class="flex">
+### Rounded corners
+
+<div class="flex gap-1">
     <div class="box rounded-none bg-primary"></div>
     <div class="box rounded-extra-small bg-primary"></div>
     <div class="box rounded-small bg-primary"></div>
@@ -68,7 +71,7 @@ For a detailed description of M3 Shape, see [Definition of M3 Shape](https://m3.
 </div>
 
 ```html
-<div class="flex">
+<div class="flex gap-1">
     <div class="box rounded-none bg-primary"></div>
     <div class="box rounded-extra-small bg-primary"></div>
     <div class="box rounded-small bg-primary"></div>
@@ -96,29 +99,23 @@ For a detailed description of M3 Shape, see [Definition of M3 Shape](https://m3.
 </style>
 ```
 
-<div class="flex">
-    <div class="box rounded-t-none bg-primary"></div>
-    <div class="box rounded-t-extra-small bg-primary"></div>
-    <div class="box rounded-t-small bg-primary"></div>
-    <div class="box rounded-t-medium bg-primary"></div>
-    <div class="box rounded-t-large bg-primary"></div>
-    <div class="box rounded-t-large-increased bg-primary"></div>
+### Directional suffixes
+
+You can combine shape styles with directional suffixes to target specific corners.
+
+<div class="flex gap-1">
     <div class="box rounded-t-extra-large bg-primary"></div>
-    <div class="box rounded-t-extra-large-increased bg-primary"></div>
-    <div class="box rounded-t-extra-extra-large bg-primary"></div>
+    <div class="box rounded-r-extra-large bg-primary"></div>
+    <div class="box rounded-b-extra-large bg-primary"></div>
+    <div class="box rounded-l-extra-large bg-primary"></div>
 </div>
 
 ```html
-<div class="flex">
-    <div class="box rounded-t-none bg-primary"></div>
-    <div class="box rounded-t-extra-small bg-primary"></div>
-    <div class="box rounded-t-small bg-primary"></div>
-    <div class="box rounded-t-medium bg-primary"></div>
-    <div class="box rounded-t-large bg-primary"></div>
-    <div class="box rounded-t-large-increased bg-primary"></div>
+<div class="flex gap-1">
     <div class="box rounded-t-extra-large bg-primary"></div>
-    <div class="box rounded-t-extra-large-increased bg-primary"></div>
-    <div class="box rounded-t-extra-extra-large bg-primary"></div>
+    <div class="box rounded-r-extra-large bg-primary"></div>
+    <div class="box rounded-b-extra-large bg-primary"></div>
+    <div class="box rounded-l-extra-large bg-primary"></div>
 </div>
 
 <style>
@@ -136,3 +133,37 @@ For a detailed description of M3 Shape, see [Definition of M3 Shape](https://m3.
     }
 </style>
 ```
+
+### Corner pairs
+
+You can also target corner pairs with two-letter suffixes.
+
+<div class="flex gap-1">
+    <div class="box rounded-tl-extra-large bg-primary"></div>
+    <div class="box rounded-tr-extra-large bg-primary"></div>
+    <div class="box rounded-bl-extra-large bg-primary"></div>
+    <div class="box rounded-br-extra-large bg-primary"></div>
+</div>
+
+```html
+<div class="flex gap-1">
+    <div class="box rounded-tl-extra-large bg-primary"></div>
+    <div class="box rounded-tr-extra-large bg-primary"></div>
+    <div class="box rounded-bl-extra-large bg-primary"></div>
+    <div class="box rounded-br-extra-large bg-primary"></div>
+</div>
+
+<style>
+    .box {
+        height: 96px;
+        width: 96px;
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    .flex {
+        display: flex;
+        overflow: auto;
+    }
+</style>

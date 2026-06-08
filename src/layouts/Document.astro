@@ -17,6 +17,40 @@ const { frontmatter } = Astro.props
 <RootHTML>
     <PageMeta {...frontmatter.pageMetaProps} slot="head" />
 
+    <!-- Fix dark mode transition issue -->
+    <script is:inline>
+        const stored = localStorage.getItem('theme-config')
+        if(stored) {
+            const themeConfig = JSON.parse(stored)
+            if(themeConfig.isDark) {
+                document.documentElement.setAttribute('initiating', '')
+                document.documentElement.toggleAttribute('dark', true)
+                document.documentElement.removeAttribute('initiating')
+            }
+        }
+    </script>
+
+    <!-- Import Modules from https://esm.sh/ -->
+    <script is:inline type="importmap" slot="head">
+        {
+            "imports": {
+                "@sandlada/document-context": "https://esm.sh/@sandlada/document-context@0.0.1-20260430.d"
+            }
+        }
+    </script>
+
+    <!-- Inject themeConfig object into document element. -->
+    <script is:inline type="module" slot="head">
+        import { enhanceDocument } from '@sandlada/document-context';
+        enhanceDocument();
+
+        try {
+            document.dispatchEvent(new Event('theme:init-from-local-storage'))
+        } catch {
+        } finally {
+        }
+    </script>
+
     <Header title={frontmatter.headerProps.title} />
 
     <main class="content">

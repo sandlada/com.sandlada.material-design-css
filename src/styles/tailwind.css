@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "@sandlada/material-design-css/preset.css";
-@import "@sandlada/material-design-css/prebuild-color/cold-blue.css";
+@import "@sandlada/material-design-css/prebuilt-colors/content/h150c60t50-2025.css";
+@import "@sandlada/material-design-css/prebuilt-palettes/content/h150c60t50-2025.css";
+@import "@sandlada/material-design-css/palette/tailwind-theme.css";
 @import "@sandlada/material-design-css/color/tailwind-theme.css";
 @import "@sandlada/material-design-css/motion/tailwind-theme.css";
 @import "@sandlada/material-design-css/motion/animation-utilities.css";
@@ -8,7 +10,7 @@
 @import "@sandlada/material-design-css/shape/tailwind-theme.css";
 @import "@sandlada/material-design-css/typography/tailwind-theme.css";
 @import "@sandlada/material-design-css/typography/tailwind-utilities.css";
-
+@import "@sandlada/material-design-css/typography/typography-utilities.css";
 
 * {
     margin: 0;
@@ -51,11 +53,6 @@ body {
     animation-name: slide-box-animation;
     animation-iteration-count: infinite;
 }
-
-.animation-duration-2000 {
-    animation-duration: 2000ms;
-}
-
 @keyframes slide-box-animation {
     from {
         left: 0;
@@ -63,6 +60,28 @@ body {
 
     to {
         left: 100%;
+    }
+}
+
+.grow-box {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    animation-name: grow-box-animation;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+@keyframes grow-box-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -76,4 +95,19 @@ body {
 
 [hidden] {
     display: none;
+}
+
+:root[initiating],
+:root[initiating] * {
+    transition: none !important;
+    transition-property: none !important;
+    transition-duration: 0s !important;
+}
+
+.custom-text {
+    font-family: var(--md-sys-typescale-display-large-font);
+    font-size: var(--md-sys-typescale-title-large-size);
+    font-weight: var(--md-sys-typescale-headline-medium-weight);
+    line-height: var(--md-sys-typescale-body-large-line-height);
+    letter-spacing: var(--md-sys-typescale-label-large-tracking);
 }

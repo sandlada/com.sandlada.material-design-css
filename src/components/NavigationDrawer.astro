@@ -4,9 +4,12 @@ import CloseSvg from "@material-design-icons/svg/round/close.svg?raw"
 const navigationLinks = [
     { label: "Home", href: "/" },
     { label: "Color", href: "/color/" },
+    { label: "Palette", href: "/palette/" },
     { label: "Motion", href: "/motion/" },
     { label: "Shape", href: "/shape/" },
     { label: "Typography", href: "/typography/" },
+    { label: "Prebuilt Colors", href: "/prebuilt-colors/" },
+    { label: "Prebuilt Palettes", href: "/prebuilt-palettes/" },
 ]
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
@@ -72,30 +75,30 @@ import "@material/web/ripple/ripple"
         const scrim = document.querySelector(`#navigation-drawer-scrim`) as HTMLElement
 
         const state = NavigationDrawerState.init()
-        
+
 
         const close = async (quick: boolean = false) => {
             abort.abort()
             abort = new AbortController()
-            
+
             pending = true
             await animate('close', quick)
             dialog.close()
             pending = false
-            
+
             state.isOpend = false
             state.saveChanges()
         }
         const show = async (quick: boolean = false) => {
             abort.abort()
             abort = new AbortController()
-            
+
             pending = true
 
             dialog.show()
             await animate('open', quick)
             pending = false
-                
+
             state.isOpend = true
             state.saveChanges()
         }
@@ -110,21 +113,21 @@ import "@material/web/ripple/ripple"
                 animation = dialog.animate([
                     {width: '0px', opacity: '0' },
                     {width: `240px`, opacity: '1' },
-                ], { 
-                    duration: 500, 
+                ], {
+                    duration: 500,
                     // @ts-ignore
-                    signal: abort.signal, 
-                    easing: 'cubic-bezier(0.05, 0.7, 0.1, 1.0)' 
+                    signal: abort.signal,
+                    easing: 'cubic-bezier(0.05, 0.7, 0.1, 1.0)'
                 })
             } else {
                 animation = dialog.animate([
                     {width: `240px`, opacity: '1' },
                     {width: '0px', opacity: '0' },
-                ], { 
-                    duration: 200, 
+                ], {
+                    duration: 200,
                     // @ts-ignore
-                    signal: abort.signal, 
-                    easing: 'cubic-bezier(0.2, 0.0, 0, 1.0)' 
+                    signal: abort.signal,
+                    easing: 'cubic-bezier(0.2, 0.0, 0, 1.0)'
                 })
             }
 
@@ -182,7 +185,7 @@ import "@material/web/ripple/ripple"
     display: flex;
     background: var(--md-sys-color-scrim);
     pointer-events: none;
-    
+
     @media (min-width: 840px) {
         opacity: 0;
     }
@@ -261,5 +264,5 @@ import "@material/web/ripple/ripple"
         position: relative;
         background-color: var(--md-sys-color-surface-container);
     }
-        }
+}
 </style>

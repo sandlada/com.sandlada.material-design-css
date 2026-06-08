@@ -5,14 +5,14 @@ headerProps:
   title: "Typography"
 
 pageMetaProps:
-  title: "Typography - Material Design CSS"
-  description: "@sandlada/material-design-css provides a complete typography tokens. 30 styles, including 15 classic styles and 15 emphasized styles. This document will guide users on how to use typography."
-  keywords: "Material Design CSS, @sandlada/material-design-css, sandlada, kai-orion, tutorials, sample code, typography, typescale"
+  title: "Typography Type Scale - Material Design CSS"
+  description: "Material Design 3 typography tokens with @sandlada/material-design-css. 30 styles: display, headline, title, body, and label in large/medium/small sizes, plus emphasized variants. Individual font, size, weight, line-height, and tracking tokens. Supports TailwindCSS v4."
+  keywords: "Material Design typography, type scale, @sandlada/material-design-css, display-large, headline-medium, body-small, label-large, emphasized typography, CSS typography tokens, font utilities, TailwindCSS v4"
 ---
 
 # Typography
 
-Typography includes 30 styles, including 15 classic styles and 15 emphasized styles. These 15 styles are composed of 5 parts.:
+Typography includes 30 styles, including 15 classic styles and 15 emphasized styles. These 15 styles are composed of 5 parts:
 
 - Display
 - Headline
@@ -26,7 +26,7 @@ Each part has three sizes:
 - Medium
 - Small
 
-Each of the 30 styles has a single token that captures all the default properties. Tokens are separated into the baseline and emphasized sets. Each axis and property, such as font, line height, size, tracking, and weight, also has an individual token for greater customization. 
+Each of the 30 styles has a single token that captures all the default properties. Tokens are separated into the baseline and emphasized sets. Each axis and property, such as font, line height, size, tracking, and weight, also has an individual token for greater customization.
 
 For a detailed description of M3 Typography, see [Definition of M3 Typography](https://m3.material.io/styles/typography/type-scale-tokens).
 
@@ -34,20 +34,33 @@ For a detailed description of M3 Typography, see [Definition of M3 Typography](h
 
 ### For CSS
 
-_For CSS, we don't provide more detailed class names like tailindcss._
-
 ```css
 @import "@sandlada/material-design-css/typography/typography-utilities.css";
 ```
 
 ### For TailwindCSS v4
 
-_For CSS, we don't provide more detailed class names like tailindcss._
-
 ```css
+@import "tailwindcss";
 @import "@sandlada/material-design-css/typography/tailwind-theme.css";
 @import "@sandlada/material-design-css/typography/tailwind-utilities.css";
 ```
+
+The `tailwind-theme.css` provides the following utility classes for each style:
+
+- `font-{style}` — font-family
+- `text-{style}` — font-size
+- `tracking-{style}` — letter-spacing
+- `leading-{style}` — line-height
+- `font-weight-{style}` — font-weight
+
+For example: `font-display-large`, `text-display-large`, `tracking-display-large`, `leading-display-large`, `font-weight-display-large`.
+
+The `tailwind-utilities.css` provides the combined class:
+
+- `{style}` — applies all typography properties at once
+
+For example: `display-large`, `headline-medium`, `body-small`.
 
 ## Usage
 
@@ -92,7 +105,7 @@ _For CSS, we don't provide more detailed class names like tailindcss._
 
 <style>
     .block {
-        dispay: block;
+        display: block;
     }
 </style>
 ```
@@ -138,7 +151,41 @@ _For CSS, we don't provide more detailed class names like tailindcss._
 
 <style>
     .block {
-        dispay: block;
+        display: block;
     }
 </style>
 ```
+
+### Individual property tokens
+
+For fine-grained control, you can use individual property tokens to customize specific aspects of typography.
+
+<div class="custom-typography-demo">
+    <span class="custom-text">Custom typography using individual tokens</span>
+</div>
+
+```html
+<div class="custom-typography-demo">
+    <span class="custom-text">Custom typography using individual tokens</span>
+</div>
+
+<style>
+    .custom-text {
+        font-family: var(--md-sys-typescale-display-large-font);
+        font-size: var(--md-sys-typescale-title-large-size);
+        font-weight: var(--md-sys-typescale-headline-medium-weight);
+        line-height: var(--md-sys-typescale-body-large-line-height);
+        letter-spacing: var(--md-sys-typescale-label-large-tracking);
+    }
+</style>
+```
+
+Available individual property tokens follow this pattern:
+
+- `--md-sys-typescale-{style}-font`
+- `--md-sys-typescale-{style}-size`
+- `--md-sys-typescale-{style}-weight`
+- `--md-sys-typescale-{style}-line-height`
+- `--md-sys-typescale-{style}-tracking`
+
+Replace `{style}` with any of the 15 style names (e.g., `display-large`, `body-medium`, `label-small`).
